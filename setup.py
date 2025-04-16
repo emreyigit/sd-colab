@@ -13,10 +13,7 @@ setup(
         'toml',
         'rarfile',
         'xmltodict',
-        'pydantic'
+        'pillow==11.2.1',
+        'pydantic==2.11.3'
     ],
-    author='Furqanil Taqwa',
-    author_email='furqanil.taqwa@gmail.com',
-    description='A utility library for Google Colab',
-    url='https://github.com/Linaqruf/colablib',
 )
