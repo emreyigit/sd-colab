@@ -3,6 +3,7 @@ import os
 import zipfile
 import rarfile
 import shutil
+import py7zr
 from collections import defaultdict
 from ..colored_print import cprint
 
@@ -46,6 +47,12 @@ def extract_package(package_name, target_directory, overwrite=False):
                 rar_ref.extractall(target_directory)
         except Exception as e:
             cprint(f"Package extraction failed with error: {str(e)}", color="flat_red")
+    elif package_name.endswith(".7z"):
+        try:        
+            with py7zr.SevenZipFile(package_name, mode='r') as sz_ref:
+                 sz_ref.extractall(target_directory)
+        except Exception as e:
+            cprint(f"Package extraction failed with error: {str(e)}", color="flat_red")        
     else:
         cprint(f"Package type not supported: {package_name}", color="flat_red")
 
