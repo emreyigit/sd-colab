@@ -14,6 +14,7 @@ setup(
         'rarfile',
         'xmltodict',
         'pillow==11.2.1',
-        'pydantic==2.11.3'
+        'pydantic==2.11.3',
+        'py7zr==0.22.0'
     ],
 )
